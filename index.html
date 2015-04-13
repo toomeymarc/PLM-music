@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>PLM music</title>
+	<meta name="author" content="Marc Toomey" />
+	<meta name="description" content="fullPage full-screen backgrounds." />
+	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
+	<meta name="Resource-type" content="Document" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="robots" content="index,follow">
+
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+	<link href="css/1140.css" rel="stylesheet" type="text/css">
+	<link href="css/custom.css" rel="stylesheet" type="text/css">
+	<style>
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 10em;
+		font-family: 'Gloria Hallelujah', cursive;
+		color: #fff;
+		padding:0;
+		margin:-18%;
+	
+	}
+
+	h2{
+		font-size: 6em;
+		font-family: 'Gloria Hallelujah', cursive;
+		color: #fff;
+		margin:0;
+		padding:0;
+		margin-bottom: 22%;
+	}
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section0 .layer1{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 30%;
+		height: 100%;
+	}
+
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section0{
+		overflow: hidden;
+	}
+
+	#section1{
+		background: -webkit-gradient(linear, top left, bottom left, from(#CFD6DE), to(#A2BDDB));
+		background: -webkit-linear-gradient(#CFD6DE, #A2BDDB);
+		background: linear-gradient(#CFD6DE,#A2BDDB);
+
+	}
+
+	#section2{
+		background: -webkit-gradient(linear, top left, bottom left, from(#A2BDDB), to(#86AED8));
+		background: -webkit-linear-gradient(#A2BDDB, #86AED8);
+		background: linear-gradient(#A2BDDB,#86AED8);
+
+	}
+
+	#section3{
+		background: -webkit-gradient(linear, top left, bottom left, from(#86AED8), to(#6FA2D6));
+		background: -webkit-linear-gradient(#86AED8, #6FA2D6);
+		background: linear-gradient(#86AED8,#6FA2D6);
+
+	}
+
+
+#buttonyoutube{
+	width: 213px;
+	height: 150px;
+	position: absolute;
+	bottom: 40%;
+	right: 25%;
+	size: 213px 150px;
+	z-index: 4;
+}
+
+#buttonfacebook{
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	bottom: 40%;
+	left: 28%;
+	size: 150px 150px;
+	z-index: 4;
+}
+
+.container12{
+	top:20%;
+}
+
+.text{
+	margin-bottom: 80%;
+}
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="js/examples.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: true,
+				afterRender: function(){
+
+
+					//playing the video
+					$('video').get(0).play();
+				}
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section " id="section0">
+		<video loop="loop" preload="auto" autoplay="" muted="muted" id="myVideo">
+			<source src="img/eau.mp4" type="video/mp4">
+			<source src="img/eau.ogv" type="video/ogv">
+		</video>
+		<div class="layer1">
+			<img src="img/plmtransparent.png">
+		</div>
+	</div>
+	<div class="section" id="section1">
+	    	<div class='container12'>
+				<ul id='scene'>
+					<li class='layer' id='l1' data-depth='0.30'><img src='img/DJ.png'></li>
+					<li class='layer' id='l2' data-depth='0.60'><img src='img/vinyl.png'></li>
+					<li class='layer' id='l3'data-depth='0.9'><img src='img/flux.png'></li>
+				</ul>
+			</div>
+	    	<div class='text'>
+	    		<h1>Unique & Fresh</h1>
+	   		 </div> 
+	</div>
+	<div class="section" id="section2"><h1>We share today's <br/>Music with you</h1></div>
+	<div class="section" id="section3"><h2>Follow Us !</h2>
+		<div class="layer2">
+			<img id='buttonyoutube' src="img/youtube.png" onClick="parent.location='https://www.youtube.com/channel/UCfPXovaznFzVUypwh6pKyNw">
+			<img id='buttonfacebook' src="img/facebook.png"  onClick="parent.location='https://www.facebook.com/EiffelJazz">
+		</div>
+	</div>
+</div>
+<script src="deploy/parallax.min.js"></script>
+	<script>
+
+	// Pretty simple huh?
+	var scene = document.getElementById('scene');
+	var parallax = new Parallax(scene);
+
+	</script>
+</body>
+</html>
